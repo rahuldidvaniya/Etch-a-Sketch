@@ -2,7 +2,22 @@ const container = document.querySelector('.container');
 const button = document.getElementById('resizeButton');
 const totalSize = 500;
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
+console.log(getRandomColor());
+
+console.log(Math.floor(Math.random() * 16));
+  
+  
+  
+ 
 function createGrid(size) {
     container.innerHTML = '';
 
@@ -15,7 +30,7 @@ function createGrid(size) {
         container.appendChild(square);     
 
         square.addEventListener('mouseover',() => {
-            square.classList.add('active');
+            square.style.backgroundColor = getRandomColor();
         })
 
         container.appendChild(square);
